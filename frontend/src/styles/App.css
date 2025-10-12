@@ -1,0 +1,9 @@
+body { font-family: Arial, Helvetica, sans-serif; background:#f4f6fb; margin:0; padding:20px; }
+.page { max-width:900px; margin:0 auto; }
+.card { background:#fff; border-radius:8px; padding:16px; box-shadow:0 8px 20px rgba(20,20,50,0.06); }
+.auth input { display:block; width:100%; padding:10px; margin:8px 0; border:1px solid #e6e9ef; border-radius:6px; }
+button { padding:8px 12px; border-radius:6px; background:#2b6ef6; color:#fff; border:none; cursor:pointer; }
+.row { display:flex; gap:8px; }
+.topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.task-list { list-style:none; padding:0; }
+.task-row { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #f0f2f5; }
