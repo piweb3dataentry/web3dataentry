@@ -1,0 +1,5 @@
+export function isPioneer(piWalletAddress) {
+  // simple heuristic placeholder: if wallet contains 'PIONEER' string (demo)
+  if (!piWalletAddress) return false;
+  return piWalletAddress.toLowerCase().includes("pioneer");
+}
