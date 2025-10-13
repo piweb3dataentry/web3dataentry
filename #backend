@@ -1,0 +1,11 @@
+# backend
+cd backend
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python ai_server.py
+
+# frontend (in new terminal)
+cd frontend
+npm install
+REACT_APP_AI_WS="ws://localhost:8000/ws/verify" npm start
