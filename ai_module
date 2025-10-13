@@ -1,7 +1,0 @@
-ai_module/
-│
-├── config.py
-├── ai_model.py
-├── ai_api.py
-├── requirements.txt
-└── models/
