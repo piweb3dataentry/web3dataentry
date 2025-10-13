@@ -1,0 +1,75 @@
+import React, { useEffect, useRef, useState } from "react";
+
+export default function Verifier({ wsUrl = "ws://localhost:8000/ws/verify" }) {
+  const wsRef = useRef(null);
+  const [status, setStatus] = useState("idle");
+  const [logs, setLogs] = useState([]);
+
+  useEffect(() => {
+    return () => {
+      if (wsRef.current) wsRef.current.close();
+    };
+  }, []);
+
+  function append(msg) {
+    setLogs((s) => [...s, `${new Date().toLocaleTimeString()} - ${msg}`]);
+  }
+
+  function connect() {
+    if (wsRef.current) wsRef.current.close();
+    const ws = new WebSocket(wsUrl);
+    wsRef.current = ws;
+
+    ws.onopen = () => {
+      append("WebSocket connected");
+      setStatus("connected");
+    };
+    ws.onmessage = (ev) => {
+      try {
+        const obj = JSON.parse(ev.data);
+        if (obj.type === "progress") append(`progress: ${obj.data}`);
+        else if (obj.type === "result") append(`result: ${JSON.stringify(obj.data)}`);
+        else if (obj.type === "error") append(`error: ${obj.data}`);
+        else append(JSON.stringify(obj));
+      } catch (e) {
+        append(ev.data);
+      }
+    };
+    ws.onclose = () => {
+      append("WebSocket closed");
+      setStatus("closed");
+    };
+    ws.onerror = () => {
+      append("WebSocket error");
+      setStatus("error");
+    };
+  }
+
+  function sendVerify(sampleText) {
+    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN) {
+      append("Connecting first...");
+      connect();
+      setTimeout(() => {
+        sendVerify(sampleText);
+      }, 300);
+      return;
+    }
+    const payload = { action: "verify", payload: { text: sampleText } };
+    wsRef.current.send(JSON.stringify(payload));
+    append("Sent verify request");
+    setStatus("verifying");
+  }
+
+  return (
+    <div>
+      <div style={{ marginBottom: 8 }}>
+        <button onClick={connect}>Connect</button>
+        <button onClick={() => sendVerify("Example: Hello from Pi user")}>Verify Example</button>
+        <span style={{ marginLeft: 12 }}>Status: {status}</span>
+      </div>
+      <div style={{ whiteSpace: "pre-wrap", fontFamily: "monospace", maxHeight: 260, overflow: "auto", border: "1px solid #ddd", padding: 8 }}>
+        {logs.map((l, i) => <div key={i}>{l}</div>)}
+      </div>
+    </div>
+  );
+}
