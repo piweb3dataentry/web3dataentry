@@ -32,6 +32,10 @@ Deploy on Remix/Hardhat when ready.
 - Transaction fee: 0.01 Pi (sample)
 
 ## Contact
-Owner: your-name / your-email
-License: MIT
+- **Name:** Ajgar Ali Molla  
+- **Email:** adamsallam48104@gmail.com
+- **GitHub:** [https://github.com/piweb3dataentry](https://github.com/piweb3dataentry)
 
+Feel free to reach out for support, collaboration, or integration.
+
+License: MIT
