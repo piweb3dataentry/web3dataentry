@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pi Login Demo</title>
+    <!-- Pi SDK -->
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+    <script> Pi.init({ version: "2.0" }) </script>
+  </head>
+  <body>
+    <h1>Login with Pi</h1>
+    <button id="btnLogin">Login with Pi</button>
+    <pre id="out"></pre>
+
+    <script>
+      const out = document.getElementById('out');
+      document.getElementById('btnLogin').addEventListener('click', async () => {
+        try {
+          const PiWindow = window.Pi; // per docs
+          // request minimal scope (accessToken always returned)
+          const scopes = []; // or ['username'] if you want username
+          function onIncompletePaymentFound(payment) { console.log('incomplete', payment); }
+
+          const auth = await PiWindow.authenticate(scopes, onIncompletePaymentFound);
+          // auth: { accessToken: string, user: { uid, username } }
+          out.textContent = 'Got auth from Pi SDK. Verifying on server...\\n' + JSON.stringify(auth, null, 2);
+
+          // send accessToken to our server to verify and create session
+          const res = await fetch('/auth/pi-verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ accessToken: auth.accessToken })
+          });
+          const data = await res.json();
+          if (!res.ok) throw data;
+          // store our JWT (example: localStorage)
+          localStorage.setItem('token', data.token);
+          out.textContent += '\\nServer response: ' + JSON.stringify(data, null, 2);
+        } catch (e) {
+          console.error(e);
+          out.textContent = 'Error: ' + JSON.stringify(e);
+        }
+      });
+    </script>
+  </body>
+</html>
