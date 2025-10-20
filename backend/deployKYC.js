@@ -1,0 +1,33 @@
+import Web3 from "web3";
+import fs from "fs";
+import dotenv from "dotenv";
+dotenv.config();
+
+const web3 = new Web3(process.env.RPC_URL);
+const account = web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_KEY);
+web3.eth.accounts.wallet.add(account);
+web3.eth.defaultAccount = account.address;
+
+const contractAbi = JSON.parse(fs.readFileSync("./contracts/KYCAuthABI.json", "utf8"));
+const contractBytecode = fs.readFileSync("./contracts/KYCAuth.bin", "utf8");
+
+const deployKYC = async () => {
+  try {
+    const contract = new web3.eth.Contract(contractAbi);
+    const deployed = await contract.deploy({ data: contractBytecode }).send({
+      from: account.address,
+      gas: 5000000
+    });
+
+    console.log("KYCAuth contract deployed at:", deployed.options.address);
+
+    // Example: register user
+    const tx = await deployed.methods.registerUser("Ajgar Ali", "ajgar@example.com")
+      .send({ from: account.address, gas: 200000 });
+    console.log("User registered:", tx.transactionHash);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+deployKYC();
