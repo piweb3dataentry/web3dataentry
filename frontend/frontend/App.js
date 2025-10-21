@@ -1,3 +1,4 @@
+import './styles/styles.css';
 import React, { useState } from "react";
 import PiDashboard from "./components/PiDashboard";
 import MetamaskSwap from "./components/MetamaskSwap";
