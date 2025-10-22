@@ -1,7 +1,12 @@
-# web3dataentry
+🌐 Web3 DataEntry — Empowering Real People Through Web3 Work
 
-Web3 Data Entry Platform — backend (Express + MongoDB), frontend (React), smart contracts (Solidity).  
-This repo is setup-ready for others: clone → install → run.
+Web3 DataEntry is a decentralized platform that connects real-world data entry workers with blockchain-powered payments.
+It brings trust, transparency, and true earning opportunities to millions of people — without banks, without borders.
+
+💠 Earn Pi Coin for completing verified micro-tasks.
+💠 Work from anywhere — powered by the Pi Network ecosystem.
+💠 No middleman, no fake jobs — every task is recorded and verified on the blockchain.
+💠 Empowering individuals to become part of the future Web3 workforce
 
 ## Quick start (local)
 
