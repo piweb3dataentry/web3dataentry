@@ -2,46 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Terms of Service - Piweb3data entry</title>
+  <title>Terms of Service - Piweb3data Entry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; color: #333; max-width: 800px; margin: auto; }
+    body { 
+      font-family: Arial, sans-serif; 
+      padding: 20px; 
+      line-height: 1.6; 
+      color: #333; 
+      max-width: 800px; 
+      margin: auto; 
+    }
     h1, h2 { color: #222; }
   </style>
 </head>
 <body>
 
 <h1>Terms of Service</h1>
-<p>Welcome to the Piweb3data entry app (hereby referred to as "Application") created by Ajgar Ali Molla (hereby referred to as "Service Provider"). By using this Application, you agree to comply with and be bound by the following terms and conditions.</p>
+<p>
+  Welcome to the Piweb3data Entry application (hereby referred to as "Application") 
+  created by Ajgar Ali Molla (hereby referred to as "Service Provider"). 
+  By accessing or using this Application, you agree to comply with and be legally bound 
+  by the following Terms of Service.
+</p>
 
-<h2>Use of Application</h2>
+<h2>Use of the Application</h2>
 <ul>
-  <li>The Application is provided "AS IS" without warranties of any kind.</li>
-  <li>Users must use the Application responsibly and not attempt to exploit bugs or vulnerabilities.</li>
-  <li>Users are responsible for maintaining the confidentiality of their account credentials.</li>
+  <li>The Application is provided on an “AS IS” basis without any warranties.</li>
+  <li>Users must use the Application responsibly and ethically.</li>
+  <li>Users must not attempt to exploit, hack, or misuse the Application in any way.</li>
+  <li>Users are responsible for maintaining the confidentiality of their credentials.</li>
 </ul>
 
 <h2>Prohibited Activities</h2>
 <ul>
-  <li>Unauthorized access or use of the Application.</li>
-  <li>Engaging in fraudulent activities or attempting to cheat the system.</li>
-  <li>Uploading or sharing malicious content.</li>
+  <li>Unauthorized access or attempting to bypass system security.</li>
+  <li>Fraudulent, misleading, or cheating behavior.</li>
+  <li>Uploading harmful, malicious, or illegal content.</li>
+  <li>Reverse-engineering, copying, or modifying the Application without permission.</li>
 </ul>
 
 <h2>Intellectual Property</h2>
-<p>All content, code, and materials within the Application are the intellectual property of the Service Provider. Users may not reproduce, distribute, or modify without permission.</p>
+<p>
+  All code, design, text, trademarks, and other materials in the Application 
+  are the intellectual property of the Service Provider. 
+  Reproduction or distribution without permission is prohibited.
+</p>
 
 <h2>Limitation of Liability</h2>
-<p>The Service Provider is not liable for any direct, indirect, incidental, or consequential damages arising from the use of the Application.</p>
+<p>
+  The Service Provider is not responsible for any direct, indirect, incidental, 
+  or consequential damages resulting from the use or inability to use the Application.
+</p>
 
 <h2>Termination</h2>
-<p>The Service Provider may suspend or terminate access to the Application at any time for violation of these terms.</p>
+<p>
+  The Service Provider reserves the right to suspend or terminate user access at any time 
+  if any violation of these Terms is detected.
+</p>
 
-<h2>Changes</h2>
-<p>These Terms of Service may be updated periodically. Continued use of the Application constitutes acceptance of the updated terms.</p>
+<h2>Changes to Terms</h2>
+<p>
+  These Terms of Service may be updated at any time. 
+  Continued use of the Application after changes indicates acceptance of the revised Terms.
+</p>
 
 <h2>Contact Us</h2>
-<p>If you have any questions regarding these terms, please contact: <strong>moryamkhatun062@gmail.com</strong></p>
+<p>
+  For questions regarding these Terms, please contact us at:  
+  <strong>moryamkhatun062@gmail.com</strong>
+</p>
 
 <p><em>Effective Date: 2025-10-07</em></p>
 
